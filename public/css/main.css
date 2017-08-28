@@ -1,0 +1,981 @@
+@charset "UTF-8";
+/* Variables */
+.custom-font {
+  font-family: Lato, Roboto, sans-serif; }
+
+.word-wrapping-text {
+  word-wrap: break-word; }
+
+.no-padding {
+  padding: 0; }
+
+.no-margin {
+  margin: 0; }
+
+.inline-item {
+  display: inline-block; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+table {
+  font-family: Lato, Roboto, sans-serif; }
+
+.transition-ease, .mbs.mbs-items-list, .mbs.mbs-head-search .mbs-seach-overlay, .overlay, .mbs.mbs-address-tabs > li > a, .mbs.mbs-add-link, .mbs.mbs-save-link, .mbs-book-tools, .mbs-author-tools, .mbs.mbs-card-books .mbs-card-book-cover, .tabbable-line > .nav-tabs > li {
+  transition: all 0.3s ease-in-out; }
+
+body:after {
+  content: "";
+  background: url("../assets/background.jpg") no-repeat center;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; }
+
+@media (min-width: 768px) {
+  .app-container {
+    background-color: #FDFCFC;
+    border-radius: 5px;
+    position: absolute;
+    overflow: auto;
+    top: 50px;
+    bottom: 50px;
+    right: 100px;
+    left: 100px; }
+  .menu-column {
+    background-color: #15150F;
+    width: 200px;
+    float: left;
+    border-radius: 5px 0 0 5px;
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100%; }
+    .menu-column > img {
+      border-radius: 5px 0 0 0; }
+  .content-column {
+    margin-left: 200px;
+    background-color: #FCFCFB;
+    border-radius: 0 5px 5px 0; } }
+
+@media (max-width: 768px) {
+  .menu-column {
+    background-color: #15150F;
+    width: 20px;
+    float: left;
+    border-radius: 5px 0 0 5px;
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100%; }
+    .menu-column > img {
+      border-radius: 5px 0 0 0; }
+    .menu-column:hover {
+      width: 200px; }
+      .menu-column:hover + .content-column {
+        margin-left: 200px; }
+        .menu-column:hover + .content-column .mbs-content-row {
+          left: 200px; }
+  .content-column {
+    margin-left: 20px;
+    background-color: #FCFCFB;
+    border-radius: 0 5px 5px 0; }
+  .tools-col {
+    width: 25%;
+    float: left; }
+  .tools-col-6 {
+    width: 50%;
+    float: left; } }
+
+.mbs-menu-header {
+  text-transform: uppercase;
+  color: #5C5C5A;
+  font-family: Lato, Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 10px 0 10px 20px; }
+
+.mbs-author-avatar {
+  height: 270px;
+  min-height: 270px;
+  display: inline-block;
+  /*position: fixed;*/
+  left: 340px;
+  width: 185px;
+  max-width: 185px; }
+
+@media (min-width: 992px) {
+  .col-md-3 {
+    width: 24%; } }
+
+.col.author-card {
+  min-height: 340px; }
+
+.col.centered {
+  text-align: center; }
+
+.state-icon {
+  left: -5px; }
+
+.chklist.chklist-searchbox {
+  padding: 0 0 8px 0; }
+
+.chklist.chklist-check {
+  background: #ccc; }
+
+.chklist.chklist-box {
+  max-height: 300px;
+  overflow-y: auto; }
+
+.list-group-item {
+  cursor: pointer; }
+
+.fixed-pos {
+  position: fixed; }
+
+.col-xs-9 {
+  width: 73% !important; }
+
+.mbs-book-read {
+  color: #efefef;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black; }
+
+.mbs-rate-clear {
+  margin-top: -20px;
+  margin-left: 5px; }
+
+.mbs {
+  font-family: Lato, Roboto, sans-serif; }
+  .mbs.mbs-list-item {
+    max-height: 100px;
+    overflow-y: auto; }
+  .mbs.mbs-settings-header {
+    display: block;
+    border-bottom: 2px solid #efefef;
+    font-weight: bold;
+    font-size: 15px;
+    color: gray;
+    margin-bottom: 5px; }
+  .mbs.mbs-settings-row {
+    margin-bottom: 10px; }
+  .mbs.mbs-settings-row-item {
+    margin-bottom: 3px; }
+  .mbs.mbs-collection-label {
+    margin-top: 10px; }
+  .mbs.mbs-list {
+    margin: 0 0 10px 10px;
+    padding: 0; }
+  .mbs.mbs-header-image {
+    margin-top: 15px;
+    height: 100px;
+    width: 70px; }
+  .mbs.mbs-items-list {
+    list-style: none;
+    display: block;
+    padding: 5px;
+    border-bottom: 1px solid #c5c5c5;
+    cursor: pointer; }
+    .mbs.mbs-items-list:hover {
+      background: #e5e5e5; }
+  @media (min-width: 768px) {
+    .mbs.mbs-collection-details {
+      position: fixed;
+      overflow-y: auto;
+      bottom: 50px;
+      top: 171px; } }
+  .mbs.mbs-list-arrows {
+    padding: 100px 0 0 0;
+    text-align: center; }
+    .mbs.mbs-list-arrows button {
+      margin: 0 auto;
+      margin-bottom: 20px; }
+  .mbs.mbs-reads-tool {
+    margin-top: 25px; }
+  .mbs.mbs-author-info {
+    /*position: fixed;
+    left: 540px;
+    width: 380px;
+    max-width: 380px;*/ }
+  .mbs.mbs-author-book {
+    height: 270px;
+    min-height: 270px; }
+    .mbs.mbs-author-book > a {
+      text-decoration: none; }
+      .mbs.mbs-author-book > a:hover * {
+        opacity: 0.5; }
+  .mbs.mbs-authors-books-header {
+    margin-top: 0px;
+    border-bottom: 2px solid #EAEAEA;
+    font-family: Lato, Roboto, sans-serif;
+    font-size: 16px; }
+  .mbs.flag {
+    position: absolute; }
+  .mbs.mbs-head-row {
+    width: 100%;
+    height: 130px;
+    display: table; }
+  .mbs.mbs-head-text {
+    font-size: 36px;
+    font-family: Lato, Roboto, sans-serif;
+    font-weight: 200;
+    display: table-cell;
+    vertical-align: middle; }
+    @media (min-width: 768px) {
+      .mbs.mbs-head-text {
+        padding-left: 30px; } }
+    .mbs.mbs-head-text > .mbs-cutted-header {
+      width: 85px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block; }
+  .mbs.mbs-head-search {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right; }
+    @media (min-width: 768px) {
+      .mbs.mbs-head-search {
+        padding-right: 50px; } }
+    .mbs.mbs-head-search .mbs-seach-overlay {
+      display: inline-block;
+      opacity: 0.5; }
+      .mbs.mbs-head-search .mbs-seach-overlay input {
+        border: none;
+        font-family: Lato, Roboto, sans-serif;
+        font-size: 12px;
+        padding: 2px;
+        border-bottom: 2px solid #DFE6E4; }
+        .mbs.mbs-head-search .mbs-seach-overlay input:focus {
+          border: none;
+          border-color: #fff;
+          box-shadow: none;
+          outline: none;
+          border-bottom: 2px solid #DFE6E4; }
+      .mbs.mbs-head-search .mbs-seach-overlay:hover {
+        opacity: 1; }
+  .mbs.mbs-button {
+    border: 0;
+    outline: none;
+    background: transparent;
+    padding: 2px 5px 1px 5px;
+    border-bottom: 2px solid #DFE6E4;
+    margin-left: -4px; }
+    .mbs.mbs-button > .glyphicon {
+      font-size: 15px;
+      opacity: 0.5; }
+    .mbs.mbs-button:hover {
+      background: #ccc; }
+  @media (min-width: 768px) {
+    .mbs.mbs-content-row {
+      padding-left: 20px;
+      position: absolute;
+      overflow: hidden;
+      overflow-y: auto;
+      top: 130px;
+      bottom: 0;
+      right: 0;
+      left: 200px; }
+      .mbs.mbs-content-row.with-address {
+        margin-left: 25px; } }
+  @media (max-width: 768px) {
+    .mbs.mbs-content-row {
+      padding-left: 20px;
+      position: absolute;
+      overflow: hidden;
+      overflow-y: auto;
+      top: 130px;
+      bottom: 0;
+      right: 0;
+      left: 20px; }
+      .mbs.mbs-content-row.with-address {
+        margin-left: 25px; } }
+  .mbs.mbs-book-cover {
+    margin: 0 auto;
+    max-height: 223px;
+    height: 223px;
+    max-width: 138px;
+    width: 138px; }
+  .mbs.mbs-book-card {
+    min-height: 350px; }
+  .mbs.mbs-author-image {
+    margin: 0 auto;
+    max-height: 224px;
+    height: 224px;
+    max-width: 155px;
+    width: 155px;
+    border-radius: 3px;
+    border: 1px solid #A9A9A9;
+    text-align: left; }
+
+.overlay {
+  font-family: Lato, Roboto, sans-serif;
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9000; }
+
+.row.cover {
+  height: 195px; }
+
+.row.collection-cover {
+  height: 150px; }
+
+.tools-columns {
+  width: 50px; }
+
+/* La transizione vera e propria */
+.fade-transition {
+  transition: all .5s ease; }
+
+/* .expand-enter è lo stato iniziale del elemento */
+/* .expand-leave è lo stato finale del elemento */
+.fade-enter, .fade-leave {
+  opacity: 0; }
+
+.mbs.mbs-menu {
+  font-family: Lato, Roboto, sans-serif;
+  list-style: none;
+  padding: 8px 0 8px 10px;
+  margin: 0; }
+  .mbs.mbs-menu > li > a {
+    display: block;
+    padding: 10px 10px 10px 20px;
+    text-decoration: none;
+    color: #EBEBE8;
+    transition: 0.25s; }
+  .mbs.mbs-menu > li.active > a, .mbs.mbs-menu > li > a:hover {
+    background-color: #FCFCFB;
+    color: #323D3A;
+    border-left: 4px solid #B47C23; }
+
+.mbs.mbs-found-cover {
+  max-height: 200px;
+  max-width: 200px; }
+
+.mbs.mbs-address-tabs {
+  font-family: Lato, Roboto, sans-serif;
+  list-style: none;
+  float: left;
+  width: 25px;
+  height: inherit;
+  margin: 0;
+  padding: 0;
+  margin-left: -17px;
+  z-index: 1000; }
+  .mbs.mbs-address-tabs > li > a {
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    padding: 2px 0 2px 0;
+    text-decoration: none;
+    color: #555;
+    border-radius: 0 2px 2px 0; }
+  .mbs.mbs-address-tabs > li.active > a, .mbs.mbs-address-tabs > li > a:hover {
+    background-color: #B47C23;
+    color: #f5f5f5;
+    font-weight: bold;
+    text-shadow: #000 1px 1px 2px; }
+
+.mbs.mbs-add-link {
+  opacity: 0.75;
+  text-decoration: none;
+  cursor: pointer; }
+  .mbs.mbs-add-link i {
+    font-size: 20px; }
+  .mbs.mbs-add-link:hover {
+    opacity: 1; }
+
+.mbs.mbs-save-link {
+  opacity: 0.75;
+  text-decoration: none;
+  cursor: pointer;
+  color: gray; }
+  .mbs.mbs-save-link:hover {
+    opacity: 1; }
+
+.mbs.mbs-author-button {
+  position: absolute;
+  top: 52px;
+  left: 50%; }
+
+.mbs.mbs-book-cover:hover .overlay {
+  opacity: 1; }
+
+.mbs.mbs-author-image:hover .overlay {
+  opacity: 1;
+  border-radius: 3px;
+  z-index: 9000; }
+
+.mbs.mbs-book-title, .mbs.mbs-author-name {
+  font-family: Lato, Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: block; }
+
+.mbs.mbs-book-minor-info, .mbs.mbs-author-minor-info {
+  font-family: Lato, Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block; }
+  .mbs.mbs-book-minor-info:last-child, .mbs.mbs-author-minor-info:last-child {
+    margin-bottom: 30px; }
+
+.mbs-light {
+  color: #fff;
+  font-size: 30px;
+  float: right;
+  margin: 10px;
+  cursor: pointer; }
+  .mbs-light:hover {
+    color: #e1e1e1; }
+
+.no-decoration-link {
+  text-decoration: none !important; }
+
+.mbs-book-tools, .mbs-author-tools {
+  font-family: iconmoon !important;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer; }
+  .mbs-book-tools:hover, .mbs-author-tools:hover {
+    color: #ccc; }
+
+textarea {
+  resize: none; }
+
+.mbs-book-item, .mbs.mbs-book-genres, .mbs.mbs-book-description {
+  text-align: left;
+  overflow: hidden;
+  font-weight: 200;
+  border-bottom: 1px solid #35312B; }
+
+.dropdown-menu.inner {
+  max-height: 200px;
+  overflow-y: auto; }
+
+.mbs.mbs-book-collection {
+  text-align: center;
+  min-height: 300px; }
+  .mbs.mbs-book-collection .mbs-book-title, .mbs.mbs-book-collection .mbs.mbs-author-name {
+    text-align: center; }
+  .mbs.mbs-book-collection .mbs-book-minor-info, .mbs.mbs-book-collection .mbs.mbs-author-minor-info {
+    text-align: center; }
+  .mbs.mbs-book-collection:hover .mbs-card-book-cover {
+    cursor: pointer; }
+    .mbs.mbs-book-collection:hover .mbs-card-book-cover .overlay {
+      opacity: 1; }
+
+.mbs.mbs-card-books {
+  margin: 0 auto;
+  height: 14.5em;
+  width: 13em; }
+  .mbs.mbs-card-books .mbs-card-book-cover {
+    height: 180px;
+    width: 112px;
+    position: absolute;
+    top: 9px; }
+    .mbs.mbs-card-books .mbs-card-book-cover:first-child {
+      -webkit-transform: rotate(-7deg);
+      transform: rotate(-7deg); }
+    .mbs.mbs-card-books .mbs-card-book-cover:not(:first-child):not(:last-child) {
+      z-index: 999; }
+    .mbs.mbs-card-books .mbs-card-book-cover:last-child {
+      -webkit-transform: rotate(7deg);
+      transform: rotate(7deg); }
+    .mbs.mbs-card-books .mbs-card-book-cover:only-child {
+      z-index: 999;
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg); }
+
+.mbs.mbs-book-genres {
+  text-overflow: ellipsis; }
+
+.mbs.mbs-book-description {
+  height: 105px;
+  color: #f5f5f5;
+  border-bottom: 1px solid #35312B; }
+
+.mbs.mbs-book-details-header, .mbs.mbs-book-details-header-topborder, .mbs.mbs-book-details-inline-header {
+  color: #f5f5f5;
+  text-align: left;
+  text-transform: uppercase;
+  font-family: Lato, Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: bold; }
+
+.mbs.mbs-book-details-header-topborder {
+  border-top: 1px solid #35312B; }
+
+.mbs.mbs-book-details-inline-header {
+  display: inline-block; }
+
+.mbs.mbs-book-genres {
+  text-align: left;
+  font-size: 12px; }
+  .mbs.mbs-book-genres .mbs-book-genre {
+    color: #fff !important; }
+
+@media (min-width: 800px) {
+  .mbs.mbs-card-books .mbs-card-book-cover:first-child {
+    left: 14%; }
+  .mbs.mbs-card-books .mbs-card-book-cover:not(:first-child):not(:last-child) {
+    left: 24%; }
+  .mbs.mbs-card-books .mbs-card-book-cover:last-child {
+    left: 33%; }
+  .mbs.mbs-card-books .mbs-card-book-cover:only-child {
+    left: 24%; } }
+
+@media (min-width: 1300px) {
+  .mbs.mbs-card-books .mbs-card-book-cover:first-child {
+    left: 20%; }
+  .mbs.mbs-card-books .mbs-card-book-cover:not(:first-child):not(:last-child) {
+    left: 32%; }
+  .mbs.mbs-card-books .mbs-card-book-cover:last-child {
+    left: 43%; } }
+
+.mbs-rating-symbol {
+  margin-top: 5px;
+  font-size: 20px; }
+  .mbs-rating-symbol.mbs-symbol-small {
+    font-size: 12px; }
+
+.mbs-symbol-filled {
+  color: #FF9800; }
+
+/* BOOTSTRAP STYLE OVERRIDE */
+.modal-content {
+  border: 1px solid #B47C23;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+  font-family: Lato, Roboto, sans-serif;
+  background: #fff; }
+  .modal-content > .modal-header {
+    background: #B47C23;
+    color: #fff; }
+  .modal-content > .modal-footer {
+    background: #f5f5f5; }
+
+.modal {
+  text-align: center;
+  padding: 0 !important; }
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+  /* Adjusts for spacing */ }
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle; }
+
+.pagination {
+  font-family: Lato, Roboto, sans-serif; }
+
+/* VUE TABLE STYE OVERRIDE */
+.vuetable-pagination {
+  font-family: Lato, Roboto, sans-serif; }
+
+.error {
+  font-weight: bold;
+  color: red; }
+
+.vuetable th.sortable:hover {
+  color: #2185d0;
+  cursor: pointer; }
+
+.vuetable .fixed-size {
+  max-width: 250px; }
+
+.vuetable .thirty-percent-size {
+  width: 30%; }
+
+.vuetable .ten-percent-size {
+  width: 10%; }
+
+.vuetable-actions {
+  width: 22%;
+  padding: 12px 0px;
+  text-align: center; }
+  .vuetable-actions > button {
+    padding: 3px 6px;
+    margin-right: 4px; }
+
+.vuetable-pagination {
+  cursor: pointer; }
+
+.vuetable-pagination-info {
+  float: left;
+  margin-top: auto;
+  margin-bottom: auto; }
+
+ul.pagination {
+  margin: 0px; }
+
+.vuetable-pagination-component {
+  float: right; }
+
+/* LOADER ANIMATION */
+.loader, .fullpage-loader {
+  float: right;
+  display: none;
+  position: relative;
+  margin: 0px auto;
+  width: 30px; }
+  .loader:before, .fullpage-loader:before {
+    content: '';
+    display: block;
+    padding-top: 100%; }
+
+.fullpage-mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 800;
+  display: none; }
+
+.fullpage-loader {
+  width: 130px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000; }
+
+.page-opacity {
+  opacity: 0.5; }
+
+.circular {
+  -webkit-animation: rotate 2s linear infinite;
+  animation: rotate 2s linear infinite;
+  height: 90%;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  margin: auto; }
+
+.path {
+  stroke-dasharray: 1,200;
+  stroke-dashoffset: 0;
+  -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round; }
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0; }
+  50% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35px; }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -124px; } }
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0; }
+  50% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35px; }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -124px; } }
+
+@-webkit-keyframes color {
+  100%, 0% {
+    stroke: #d62d20; }
+  40% {
+    stroke: #0057e7; }
+  66% {
+    stroke: #008744; }
+  80%, 90% {
+    stroke: #ffa700; } }
+
+@keyframes color {
+  100%, 0% {
+    stroke: #d62d20; }
+  40% {
+    stroke: #0057e7; }
+  66% {
+    stroke: #008744; }
+  80%, 90% {
+    stroke: #ffa700; } }
+
+/* VUE IMAGE UPLOADER */
+.vue-uploader {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  .vue-uploader.image-wrapper {
+    -webkit-flex-basis: 80%;
+    -ms-flex-preferred-size: 80%;
+    flex-basis: 80%;
+    height: 200px;
+    -webkit-flex: 2.5;
+    -ms-flex: 2.5;
+    flex: 2.5;
+    border-radius: 1px;
+    margin-right: 10px;
+    overflow-y: hidden;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    background: #eee;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .vue-uploader.image-wrapper > .icon {
+      color: #ccc;
+      font-size: 50px;
+      cursor: default; }
+  .vue-uploader.image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 1px; }
+  .vue-uploader.input-wrapper {
+    overflow: hidden;
+    position: relative;
+    background: #eee;
+    border-radius: 2px;
+    float: left;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.2);
+    transition: 0.4s background; }
+    .vue-uploader.input-wrapper:hover {
+      background: #e0e0e0; }
+  .vue-uploader.input {
+    cursor: inherit;
+    display: block;
+    font-size: 999px;
+    min-height: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+    cursor: pointer; }
+
+/***
+Bootstrap Line Tabs by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+***/
+/* Tabs panel */
+.tabbable-panel {
+  border: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 10px; }
+
+/* Default mode */
+.tabbable-line > .nav-tabs {
+  border: none;
+  margin: 0px; }
+  .tabbable-line > .nav-tabs > li {
+    margin-right: 2px; }
+    .tabbable-line > .nav-tabs > li > a {
+      border: 0;
+      margin-right: 0;
+      color: #737373; }
+      .tabbable-line > .nav-tabs > li > a > i {
+        color: #a6a6a6; }
+    .tabbable-line > .nav-tabs > li.open {
+      border-bottom: 4px solid #e4cda9; }
+      .tabbable-line > .nav-tabs > li.open > a {
+        border: 0;
+        background: none !important;
+        color: #333333; }
+        .tabbable-line > .nav-tabs > li.open > a > i {
+          color: #a6a6a6; }
+      .tabbable-line > .nav-tabs > li.open.dropdown-menu {
+        margin-top: 0px; }
+    .tabbable-line > .nav-tabs > li:hover {
+      border-bottom: 4px solid #e4cda9; }
+      .tabbable-line > .nav-tabs > li:hover > a {
+        border: 0;
+        background: none !important;
+        color: #333333; }
+        .tabbable-line > .nav-tabs > li:hover > a > i {
+          color: #a6a6a6; }
+      .tabbable-line > .nav-tabs > li:hover.dropdown-menu {
+        margin-top: 0px; }
+    .tabbable-line > .nav-tabs > li.active {
+      border-bottom: 4px solid #b47c23;
+      position: relative; }
+      .tabbable-line > .nav-tabs > li.active > a {
+        border: 0;
+        color: #333333; }
+        .tabbable-line > .nav-tabs > li.active > a > i {
+          color: #404040; }
+
+.tabbable-line > .tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 15px 5px; }
+  .tabbable-line > .tab-content > .tab-pane > .tab-header {
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: underline;
+    margin-bottom: 10px; }
+
+.portlet .tabbable-line > .tab-content {
+  padding-bottom: 0; }
+
+/* TABLE OVERRIDE TO ALLOW FIXED HEADER TABLE WITH SCROLLING CONTENT */
+/*
+Force table width to 100%
+*/
+table.table-fixedheader {
+  width: 100%;
+  display: block;
+  /*
+  Set table elements to block mode.  (Normally they are inline).
+  This allows a responsive table, such as one where columns can be stacked
+  if the display is narrow.
+  */
+  /*
+  When scrolling the table, actually it is only the tbody portion of the
+  table that scrolls (not the entire table: we want the thead to remain
+  fixed).  We must specify an explicit height for the tbody.  We include
+  100px as a default, but it can be overridden elsewhere.
+
+  Also, we force the scrollbar to always be displayed so that the usable
+  width for the table contents doesn't change (such as becoming narrower
+  when a scrollbar is visible and wider when it is not).
+  */
+  /*
+  We really don't want to scroll the thead contents, but we want to force
+  a scrollbar to be displayed anyway so that the usable width of the thead
+  will exactly match the tbody.
+  */
+  /*
+  For browsers that support it (webkit), we set the background color of
+  the unneeded scrollbar in the thead to make it invisible.  (Setting
+  visiblity: hidden defeats the purpose, as this alters the usable width
+  of the thead.)
+  */
+  /*
+  We want to set <th> and <td> elements to float left.
+  We also must explicitly set the width for each column (both for the <th>
+  and the <td>).  We set to 20% here a default placeholder, but it can be
+  overridden elsewhere.
+  */ }
+  table.table-fixedheader > thead,
+  table.table-fixedheader > tbody,
+  table.table-fixedheader > thead > tr,
+  table.table-fixedheader > tbody > tr,
+  table.table-fixedheader > thead > tr > th,
+  table.table-fixedheader > tbody > td {
+    display: block; }
+  table.table-fixedheader > thead > tr:after,
+  table.table-fixedheader > tbody > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both; }
+  table.table-fixedheader > tbody {
+    overflow-y: scroll;
+    max-height: 200px; }
+  table.table-fixedheader > thead {
+    overflow-y: scroll; }
+  table.table-fixedheader > thead::-webkit-scrollbar {
+    background-color: inherit; }
+  table.table-fixedheader > thead > tr > th,
+  table.table-fixedheader > tbody > tr > td {
+    width: 33.33%;
+    float: left; }
+
+/* CARD ANIMATION */
+.card {
+  position: relative;
+  padding-bottom: 25%;
+  width: 25%;
+  text-align: center; }
+
+.card_front,
+.card_back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.card_front,
+.card_back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s; }
+
+.card_back {
+  padding: 2px 5px;
+  background-color: #555;
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg); }
+
+.card.effect_click.flipped .card_front {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg); }
+
+.card.effect_click.flipped .card_back {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0); }
+
+/*# sourceMappingURL=main.css.map */

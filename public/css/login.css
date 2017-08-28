@@ -1,0 +1,51 @@
+body {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	/*background-color: #9F7D76;*/
+}
+
+body:after{
+  content: "";
+  background: url("../assets/background.jpg") no-repeat center;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.image {
+	margin-top: -100px;
+}
+
+.panel{
+	/*background-color: #E8DDD4;*/
+}
+
+@media (max-width: 768px){
+	.on-middle{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 300px;
+		height: 300px;
+		margin-left: -150px;
+		margin-top: -150px;
+	}
+}
+@media (min-width: 768px){
+	.on-middle{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 800px;
+		height: 300px;
+		margin-left: -400px;
+		margin-top: -150px;
+	}
+}
